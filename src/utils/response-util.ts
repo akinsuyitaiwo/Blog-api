@@ -24,7 +24,7 @@ export function successResponse(
   message?: string,
   data?: object
 ) {
-  return res.status(201).send({
+  return res.status(200).send({
     message: message ? message : "Resource Created",
     data: data || null,
   });

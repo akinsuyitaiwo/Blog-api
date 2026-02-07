@@ -5,7 +5,7 @@ const { JWT_ACCESS_KEY, JWT_REFRESH_KEY } = secret;
 
 
 interface CustomJwtPayload extends DefaultJwtPayload {
-  uid: string;
+  userId: string;
   email: string;
 }
 

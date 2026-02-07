@@ -29,7 +29,7 @@ if (secret.NODE_ENV === "development") {
   app.use(morgan("combined")); // Standard Apache combined log output for production
 }
 
-app.use(appRouter);
+app.use('/api',appRouter);
 app.use(errorHandler);
 
 const port = process.env.PORT || 4000;

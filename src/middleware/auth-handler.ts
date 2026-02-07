@@ -27,14 +27,15 @@ const authHandler = async (req: Request, res: Response, next: NextFunction) => {
     const jwtService = new JWTService();
     const { verifyAccessToken } = jwtService;
     const decode = verifyAccessToken(token) as JwtPayload & {
-      uid: string;
+      userId: string;
       email: string;
     };
 
     // const decode = verifyAccessToken(token);
     if (!decode) return response(res, 401, "Invalid access token or expired");
     // Store the decoded JWT in req.user
-    req.user = { userId: decode.uid, email: decode.email }; // Map uid to userId to match CustomJwtPayload
+    // req.user = { userId: decode._id, email: decode.email }; // Map uid to userId to match CustomJwtPayload
+    req.user = decode;
 
     next();
   } catch (error) {
