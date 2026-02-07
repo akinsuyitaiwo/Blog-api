@@ -4,7 +4,7 @@ import morgan from "morgan"; // Import Morgan
 import appRouter from "./routes";
 import { configDotenv } from "dotenv";
 import secret from "./config/secret-config";
-import "./config/db-config";
+import "./config/db";
 import errorHandler from "./middleware/error-handler";
 
 
@@ -44,6 +44,7 @@ const start = async () => {
 
     console.log(appMessage);
   });
+  
 };
 
 // test auto deploy -- v5
