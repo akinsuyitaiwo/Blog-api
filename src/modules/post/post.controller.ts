@@ -115,7 +115,7 @@ export const deletePostController = async (req: Request, res: Response) => {
       userId: req.user.userId,
     });
 
-    return successResponse(res, "Post deleted successfully", post);
+    return successResponse(res, "Post deleted successfully");
   } catch (error: any) {
     if (error.message.includes("not authorized")) {
       return badReqResponse(res, error.message);
