@@ -23,7 +23,7 @@ export const signup = async (req: Request, res: Response) => {
       email,
       password: hashedPassword,
     });
-    return createdResponse(res, "User created");
+    return createdResponse(res, "User created", user);
   } catch (error) {
     return errorResponse(res, "Internal Server Error");
   }
